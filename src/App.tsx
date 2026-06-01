@@ -5,7 +5,7 @@ import Crossfader from './components/Crossfader';
 import MicrolinkSide from './components/MicrolinkSide';
 import WeddingSide from './components/WeddingSide';
 import { audioEngine } from './utils/audio';
-import './App.css';
+
 
 function App() {
   // faderValue ranges from -1 (Wedding) to 1 (EDM)

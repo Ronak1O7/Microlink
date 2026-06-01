@@ -4,8 +4,8 @@ export class AudioEngine {
   private isUnlocked: boolean = false;
 
   constructor() {
-    this.weddingAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=piano-moment-9835.mp3'); // Smooth piano/wedding placeholder
-    this.edmAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b8277be9.mp3?filename=electronic-future-beats-117997.mp3'); // EDM/club placeholder
+    this.weddingAudio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/week7-button.m4a');
+    this.edmAudio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a');
 
     this.weddingAudio.loop = true;
     this.edmAudio.loop = true;
