@@ -1,13 +1,368 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>app</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M!CROL!NK & Events</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-neon-teal: #00f3ff;
+      --color-cyan-glow: #0ff;
+      --color-steel-gray: #1a1a2e;
+      --color-warm-white: #faf9f6;
+      --color-champagne-gold: #d4af37;
+      --color-soft-beige: #f5f5dc;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="overflow-x-hidden m-0 p-0 font-sans transition-colors duration-500 bg-black">
+
+  <!-- Main Container -->
+  <div id="app" class="relative w-screen h-screen overflow-hidden">
+
+    <!-- Container for the two sides -->
+    <div class="absolute inset-0 flex w-full h-full pointer-events-none">
+
+      <!-- Wedding Side (Left) -->
+      <div id="wedding-side" class="absolute inset-0 origin-left opacity-0 pointer-events-none transition-opacity duration-300 z-0 bg-warm-white text-gray-800 font-serif overflow-y-auto overflow-x-hidden">
+
+        <!-- Fixed Background Elements -->
+        <div class="fixed inset-0 pointer-events-none">
+          <div class="absolute top-[10%] left-[20%] w-[50vw] h-[50vw] bg-champagne-gold/5 rounded-full blur-[120px]"></div>
+          <div class="absolute bottom-[10%] right-[20%] w-[40vw] h-[40vw] bg-soft-beige/40 rounded-full blur-[100px]"></div>
+        </div>
+
+        <nav class="fixed top-0 left-0 w-full p-8 flex justify-between items-center z-50 glass-light border-b border-champagne-gold/20">
+          <div class="text-2xl tracking-[0.3em] font-light text-gray-900 uppercase">
+            M!crol!nk <span class="text-champagne-gold font-normal">&amp;</span> Events
+          </div>
+          <div class="hidden md:flex gap-10 text-sm tracking-[0.2em] uppercase text-gray-600">
+            <a href="#wedding-hero" class="hover:text-champagne-gold transition-colors">Home</a>
+            <a href="#services" class="hover:text-champagne-gold transition-colors">Services</a>
+            <a href="#wedding-gallery" class="hover:text-champagne-gold transition-colors">Gallery</a>
+            <a href="#testimonials" class="hover:text-champagne-gold transition-colors">Reviews</a>
+            <a href="#packages" class="hover:text-champagne-gold transition-colors">Packages</a>
+            <a href="#wedding-booking" class="hover:text-champagne-gold transition-colors">Inquire</a>
+          </div>
+        </nav>
+
+        <main class="relative z-10 pt-32 pb-32 max-w-6xl mx-auto px-4 md:px-8 flex flex-col gap-40">
+
+          <!-- Hero Section -->
+          <section id="wedding-hero" class="min-h-[75vh] flex flex-col items-center justify-center text-center">
+            <div class="text-sm tracking-[0.3em] uppercase text-champagne-gold mb-8">
+              Premium Event Entertainment
+            </div>
+            <h1 class="text-5xl md:text-7xl font-light tracking-wide text-gray-900 mb-8 leading-tight">
+              Curating Unforgettable <br class="hidden md:block" />
+              <span class="italic font-serif text-gray-600">Moments</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-500 font-sans font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+              Elevating your special day with sophisticated soundscapes, professional lighting, and seamless transitions. Experience the perfect blend of elegance and energy.
+            </p>
+            <div class="flex gap-6 font-sans">
+              <a href="#packages" class="px-10 py-4 bg-champagne-gold text-white tracking-[0.15em] uppercase text-sm hover:bg-gray-900 transition-colors shadow-lg shadow-champagne-gold/20">
+                Discover Packages
+              </a>
+              <a href="#wedding-booking" class="px-10 py-4 border border-champagne-gold text-champagne-gold tracking-[0.15em] uppercase text-sm hover:bg-champagne-gold hover:text-white transition-colors">
+                Inquire Now
+              </a>
+            </div>
+          </section>
+
+          <!-- Services Section -->
+          <section id="services" class="scroll-mt-32">
+            <div class="text-center mb-20">
+              <h2 class="text-3xl md:text-4xl font-light tracking-wide text-gray-900 mb-4">
+                Exceptional Services
+              </h2>
+              <div class="w-24 h-[1px] bg-champagne-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-sans">
+              <!-- Item 1 -->
+              <div class="flex flex-col items-center text-center group">
+                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center text-champagne-gold mb-6 shadow-sm border border-champagne-gold/20 group-hover:bg-champagne-gold group-hover:text-white transition-colors duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-serif text-gray-900 mb-4">Curated Soundscapes</h3>
+                <p class="text-gray-500 font-light leading-relaxed">
+                  Custom-tailored playlists designed to perfectly match the mood of each moment, from the elegant cocktail hour to the energetic dance floor.
+                </p>
+              </div>
+              <!-- Item 2 -->
+              <div class="flex flex-col items-center text-center group">
+                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center text-champagne-gold mb-6 shadow-sm border border-champagne-gold/20 group-hover:bg-champagne-gold group-hover:text-white transition-colors duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-serif text-gray-900 mb-4">Professional MC</h3>
+                <p class="text-gray-500 font-light leading-relaxed">
+                  Articulate and polished announcements that smoothly guide your guests through the evening without overwhelming the celebration.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Booking Section -->
+          <section id="wedding-booking" class="scroll-mt-32 pb-32">
+            <div class="bg-white p-10 md:p-20 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-gray-100 max-w-4xl mx-auto">
+              <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-light tracking-wide text-gray-900 font-serif mb-4">
+                  Check Availability
+                </h2>
+                <p class="text-gray-500 font-light font-sans">
+                  Please provide details about your special day, and we will be in touch shortly.
+                </p>
+              </div>
+
+              <form class="flex flex-col gap-8 font-sans" onsubmit="event.preventDefault()">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="flex flex-col gap-2">
+                    <label class="text-xs uppercase tracking-widest text-gray-400">Name(s)</label>
+                    <input type="text" class="border-b border-gray-200 py-2 focus:outline-none focus:border-champagne-gold text-gray-900 bg-transparent transition-colors" />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label class="text-xs uppercase tracking-widest text-gray-400">Email Address</label>
+                    <input type="email" class="border-b border-gray-200 py-2 focus:outline-none focus:border-champagne-gold text-gray-900 bg-transparent transition-colors" />
+                  </div>
+                </div>
+                <button type="submit" class="mt-8 py-5 bg-gray-900 text-white tracking-[0.2em] uppercase text-sm hover:bg-champagne-gold transition-colors w-full md:w-auto md:px-16 md:self-center">
+                  Submit Inquiry
+                </button>
+              </form>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+      <!-- EDM Side (Right) -->
+      <div id="microlink-side" class="absolute inset-0 origin-right opacity-0 pointer-events-none transition-opacity duration-300 z-0 bg-steel-gray text-white overflow-y-auto overflow-x-hidden">
+        <!-- Fixed Background Elements -->
+        <div class="fixed inset-0 pointer-events-none">
+          <div class="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] bg-cyan-glow/10 rounded-full blur-[100px]"></div>
+          <div class="absolute bottom-[20%] right-[10%] w-[30vw] h-[30vw] bg-neon-teal/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <nav class="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50 glass-dark">
+          <div class="text-2xl font-bold tracking-tighter text-cyan-glow drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">
+            M!CROL!NK
+          </div>
+          <div class="hidden md:flex gap-8 text-sm font-semibold tracking-widest text-gray-300">
+            <a href="#hero" class="hover:text-cyan-glow transition-colors">HOME</a>
+            <a href="#releases" class="hover:text-cyan-glow transition-colors">MUSIC</a>
+            <a href="#sets" class="hover:text-cyan-glow transition-colors">LIVE SETS</a>
+            <a href="#gallery" class="hover:text-cyan-glow transition-colors">GALLERY</a>
+            <a href="#shows" class="hover:text-cyan-glow transition-colors">EVENTS</a>
+            <a href="#booking" class="hover:text-cyan-glow transition-colors">CONTACT</a>
+          </div>
+        </nav>
+
+        <main class="relative z-10 pt-24 pb-32 max-w-7xl mx-auto px-4 md:px-8 flex flex-col gap-32">
+
+          <!-- Hero Section -->
+          <section id="hero" class="min-h-[80vh] flex flex-col items-center justify-center text-center">
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-cyan-400 to-blue-600 mb-6 drop-shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+              M!CROL!NK
+            </h1>
+            <p class="text-xl md:text-3xl text-gray-300 font-light tracking-widest uppercase mb-12">
+              Electronic Music Experience
+            </p>
+            <div class="flex gap-4">
+              <a href="#releases" class="px-8 py-3 bg-cyan-glow/20 border border-cyan-glow/50 rounded-full text-cyan-glow font-bold tracking-widest hover:bg-cyan-glow hover:text-black transition-all shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_30px_rgba(0,255,255,0.6)]">
+                LATEST MUSIC
+              </a>
+              <a href="#booking" class="px-8 py-3 border border-gray-600 rounded-full text-white font-bold tracking-widest hover:border-white transition-all">
+                BOOKING
+              </a>
+            </div>
+          </section>
+
+          <!-- Music Releases Section -->
+          <section id="releases" class="scroll-mt-32">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-12 flex items-center gap-4">
+              <span class="w-12 h-[2px] bg-cyan-glow"></span>
+              LATEST RELEASES
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Item 1 -->
+              <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:border-cyan-glow/50 transition-colors">
+                <div class="aspect-square w-full relative">
+                  <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=600&auto=format&fit=crop" alt="NEON DREAMS" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <button class="w-16 h-16 rounded-full bg-cyan-glow/90 flex items-center justify-center text-black shadow-[0_0_20px_rgba(0,255,255,0.8)]">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold tracking-tight text-white mb-1">NEON DREAMS</h3>
+                  <p class="text-gray-400 text-sm tracking-widest">Defected • 2024</p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:border-cyan-glow/50 transition-colors">
+                <div class="aspect-square w-full relative">
+                  <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=600&auto=format&fit=crop" alt="CYBERPUNK" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <button class="w-16 h-16 rounded-full bg-cyan-glow/90 flex items-center justify-center text-black shadow-[0_0_20px_rgba(0,255,255,0.8)]">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold tracking-tight text-white mb-1">CYBERPUNK</h3>
+                  <p class="text-gray-400 text-sm tracking-widest">Drumcode • 2023</p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:border-cyan-glow/50 transition-colors">
+                <div class="aspect-square w-full relative">
+                  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" alt="FUTURE BASS" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <button class="w-16 h-16 rounded-full bg-cyan-glow/90 flex items-center justify-center text-black shadow-[0_0_20px_rgba(0,255,255,0.8)]">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold tracking-tight text-white mb-1">FUTURE BASS</h3>
+                  <p class="text-gray-400 text-sm tracking-widest">Monstercat • 2023</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Shows Section -->
+          <section id="shows" class="scroll-mt-32">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-12 flex items-center justify-end gap-4">
+              UPCOMING SHOWS
+              <span class="w-12 h-[2px] bg-cyan-glow"></span>
+            </h2>
+            <div class="flex flex-col gap-4">
+              <!-- Item 1 -->
+              <div class="group glass-dark p-6 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-cyan-glow/50 transition-colors">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 w-full">
+                  <div class="text-cyan-glow font-bold tracking-widest text-lg w-24">AUG 15</div>
+                  <div class="text-white font-bold text-xl">IBIZA, ES</div>
+                  <div class="text-gray-400 font-mono">Amnesia</div>
+                </div>
+                <button class="px-6 py-2 rounded-full font-bold tracking-widest text-sm transition-all w-full md:w-auto bg-cyan-glow/10 border border-cyan-glow text-cyan-glow hover:bg-cyan-glow hover:text-black">
+                  TICKETS
+                </button>
+              </div>
+              <!-- Item 2 -->
+              <div class="group glass-dark p-6 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-cyan-glow/50 transition-colors">
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 w-full">
+                  <div class="text-cyan-glow font-bold tracking-widest text-lg w-24">SEP 02</div>
+                  <div class="text-white font-bold text-xl">BERLIN, DE</div>
+                  <div class="text-gray-400 font-mono">Berghain</div>
+                </div>
+                <button class="px-6 py-2 rounded-full font-bold tracking-widest text-sm transition-all w-full md:w-auto border border-gray-700 text-gray-500 cursor-not-allowed">
+                  SOLD OUT
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Booking Section -->
+          <section id="booking" class="scroll-mt-32 pb-32">
+            <div class="glass-dark p-8 md:p-16 rounded-2xl border-t border-cyan-glow/30 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-glow/10 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative z-10 max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">
+                  BOOK M!CROL!NK
+                </h2>
+                <p class="text-gray-400 mb-10 tracking-widest">
+                  FOR FESTIVAL, CLUB, AND CORPORATE INQUIRIES
+                </p>
+                <form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="NAME" class="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-white font-mono placeholder:text-gray-600 focus:outline-none focus:border-cyan-glow transition-colors" />
+                    <input type="email" placeholder="EMAIL" class="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-white font-mono placeholder:text-gray-600 focus:outline-none focus:border-cyan-glow transition-colors" />
+                  </div>
+                  <input type="text" placeholder="EVENT TYPE / LOCATION" class="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-white font-mono placeholder:text-gray-600 focus:outline-none focus:border-cyan-glow transition-colors" />
+                  <textarea placeholder="MESSAGE" rows="4" class="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-white font-mono placeholder:text-gray-600 focus:outline-none focus:border-cyan-glow transition-colors resize-none"></textarea>
+                  <button type="submit" class="w-full bg-cyan-glow text-black font-black tracking-widest p-4 rounded-lg hover:bg-white transition-colors mt-4 shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+                    SEND INQUIRY
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+    </div>
+
+    <!-- Initial Center Message -->
+    <div id="center-message" class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-40 transition-opacity duration-500">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] uppercase animate-pulse">
+        Drag to Explore
+      </h1>
+      <p class="mt-4 text-gray-300 tracking-widest text-sm uppercase flex items-center justify-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        Sound Reactive Experience
+      </p>
+    </div>
+
+    <!-- Crossfader UI Overlay -->
+    <div id="crossfader-container" class="absolute w-full flex justify-center z-50 pointer-events-none transition-all duration-700 ease-in-out top-1/2 -translate-y-1/2">
+      <div class="pointer-events-auto w-full max-w-xl px-4 relative py-8 flex flex-col items-center select-none group">
+
+        <!-- Background Track -->
+        <div id="track" class="relative h-16 w-full max-w-2xl rounded-full overflow-hidden transition-all duration-500 glass border-gray-500 bg-gray-800/80 shadow-[0_0_20px_rgba(0,255,255,0.2)]">
+
+          <!-- Glow effect -->
+          <div id="track-glow" class="absolute inset-0 bg-gradient-to-r from-champagne-gold/20 via-transparent to-cyan-glow/20 pointer-events-none opacity-50 transition-opacity duration-500"></div>
+
+          <!-- Labels Inside Track -->
+          <div class="absolute inset-0 flex items-center justify-between px-6 pointer-events-none w-full hidden sm:flex">
+            <span id="wedding-label" class="text-champagne-gold font-serif tracking-widest text-sm font-semibold whitespace-nowrap transition-opacity duration-300 opacity-40">
+              WEDDINGS ←
+            </span>
+            <span id="microlink-label" class="text-cyan-glow font-mono tracking-widest text-sm font-bold whitespace-nowrap transition-opacity duration-300 opacity-40">
+              M!CROL!NK →
+            </span>
+          </div>
+
+          <!-- Center line -->
+          <div class="absolute left-1/2 top-1/4 bottom-1/4 w-[2px] bg-white/20 -translate-x-1/2 rounded-full pointer-events-none"></div>
+
+          <!-- Draggable Handle Container -->
+          <div class="absolute top-0 left-0 h-full w-full pointer-events-none">
+            <!-- Actual Draggable Handle -->
+            <div id="handle" class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[calc(100%-8px)] aspect-square rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing shadow-xl transition-colors duration-300 bg-gray-300 pointer-events-auto">
+              <div class="w-1/3 h-1/2 flex justify-between pointer-events-none">
+                <div class="w-[2px] h-full bg-black/30 rounded-full"></div>
+                <div class="w-[2px] h-full bg-black/30 rounded-full"></div>
+                <div class="w-[2px] h-full bg-black/30 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
